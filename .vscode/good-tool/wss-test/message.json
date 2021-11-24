@@ -1,0 +1,108 @@
+{
+	"message": [
+		{
+			"title": "设备请求许可证",
+			"data": {
+				"uid": "15831377809885646",
+				"type": 10001,
+				"content": {
+					"deviceType": 1002,
+					"sn": "0010035599538930",
+					"uuid": "003c74c7251f51cb9fc87ea8c5f81217",
+					"model": "3000V",
+					"ip": 179761557,
+					"capacity_num": 1
+				}
+			}
+		},
+		{
+			"title": "回收成功",
+			"data": {
+				"uid": "15831377809885647",
+				"type": 11002,
+				"success": 1,
+				"code": null
+			}
+		},
+		{
+			"title": "同步心跳",
+			"loopPeriod": 10,
+			"data": {
+				"uid": "15831377809885647",
+				"type": 10002,
+				"content": {
+					"deviceType": 1002,
+					"sn": "0010035599538930",
+					"uuid": "003c74c7251f51cb9fc87ea8c5f81217",
+					"model": "3000V",
+					"ip": 179761557,
+					"capacity_num": 1,
+					"vsn": "5419390000000070",
+					"lic": [
+						{
+							"vsn": "5419390000000070",
+							"model": "3000V",
+							"type": 1,
+							"exp_abs_time": 20220220,
+							"exp_rel_time": null,
+							"ser_type": "PLAT",
+							"userid": "0000000005",
+							"capacity_num": 1
+						}
+					]
+				}
+			}
+		},
+		{
+			"title": "保持在线心跳",
+			"loopPeriod": 300,
+			"data": {
+				"uid": "15831377809885698",
+				"type": 10003,
+				"content": null
+			}
+			
+		}
+	],
+	"timer": [
+		{
+			"title": "同步心跳",
+			"loopPeriod": 10,
+			"data": {
+				"uid": "15831377809885647",
+				"type": 10002,
+				"content": {
+					"deviceType": 1002,
+					"sn": "0010035599538930",
+					"uuid": "003c74c7251f51cb9fc87ea8c5f81217",
+					"model": "3000V",
+					"ip": 179761557,
+					"capacity_num": 1,
+					"vsn": "5419390000000070",
+					"lic": [
+						{
+							"vsn": "5419390000000070",
+							"model": "3000V",
+							"type": 1,
+							"exp_abs_time": 20220220,
+							"exp_rel_time": null,
+							"ser_type": 1002,
+							"userid": "0000000005",
+							"capacity_num": 1
+						}
+					]
+				}
+			}
+		},
+		{
+			"title": "保持在线心跳",
+			"loopPeriod": 300,
+			"data": {
+				"uid": "15831377809885698",
+				"type": 10003,
+				"content": null
+			}
+			
+		}
+	]
+}

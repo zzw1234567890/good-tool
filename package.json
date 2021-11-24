@@ -1,0 +1,163 @@
+{
+  "name": "good-tool",
+  "displayName": "good-tool",
+  "description": "定制的开发辅助工具",
+  "publisher": "zzw",
+  "version": "1.2.0",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/logo.png",
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "good-tool.updateConfigFile",
+        "title": "updateConfigFile",
+        "icon": {
+          "dark": "./images/tool-light.svg",
+          "light": "./images/tool-dark.svg"
+        }
+      },
+      {
+        "command": "good-tool.patchTotal",
+        "title": "patchTotal",
+        "icon": {
+          "dark": "./images/patch-light.svg",
+          "light": "./images/patch-dark.svg"
+        }
+      },
+      {
+        "command": "good-tool.generateActionCode",
+        "title": "生成 action 文件"
+      },
+      {
+        "command": "good-tool.apiTest",
+        "title": "apiTest",
+        "icon": {
+          "dark": "./images/api-light.svg",
+          "light": "./images/api-dark.svg"
+        }
+      },
+      {
+        "command": "good-tool.wssTest",
+        "title": "wssTest",
+        "icon": {
+          "dark": "./images/wss-light.svg",
+          "light": "./images/wss-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == json",
+          "command": "good-tool.updateConfigFile",
+          "alt": "good-tool.updateConfigFile",
+          "group": "navigation"
+        },
+        {
+          "command": "good-tool.patchTotal",
+          "alt": "good-tool.patchTotal",
+          "group": "navigation"
+        },
+        {
+          "command": "good-tool.apiTest",
+          "alt": "good-tool.apiTest",
+          "group": "navigation"
+        },
+        {
+          "command": "good-tool.wssTest",
+          "alt": "good-tool.wssTest",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "when": "resourceLangId == json && resourcePath in route.supportedFolders",
+          "command": "good-tool.generateActionCode",
+          "alt": "good-tool.generateActionCode",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Good Tool配置",
+      "properties": {
+        "port": {
+          "type": "number",
+          "default": 21818,
+          "description": "服务端口号"
+        },
+        "proxy": {
+          "type": "string",
+          "default": "http://127.0.0.1:2001",
+          "description": "API服务器（IP + PORT）"
+        },
+        "open": {
+          "type": "boolean",
+          "default": true,
+          "description": "开启服务"
+        },
+        "useFileConfigProxy": {
+          "type": "boolean",
+          "default": false,
+          "description": "使用配置文件配置代理"
+        },
+        "openAnalogData": {
+          "type": "boolean",
+          "default": true,
+          "description": "开启模拟数据"
+        },
+        "openFuzzyMatch": {
+          "type": "boolean",
+          "default": true,
+          "description": "开启urlPath模糊匹配"
+        }
+      }
+    },
+    "snippets": [
+      {
+        "language": "json",
+        "path": "./snippets/request-config.json"
+      },
+      {
+        "language": "json",
+        "path": "./snippets/proxy-config.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.59.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "silly-datetime": "^0.1.2"
+  }
+}

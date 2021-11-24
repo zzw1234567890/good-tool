@@ -1,0 +1,22 @@
+{
+  "proxy-config": {
+    "prefix": "pc",
+    "body": [
+      "[",
+      "\t{",
+      "\t\t\"source\": \"${1:http://127.0.0.1:}\",",
+      "\t\t\"target\": \"${2:http://}\"",
+      "\t}",
+      "]"
+    ]
+  },
+  "proxy-config-one": {
+    "prefix": "pco",
+    "body": [
+      "{",
+      "\t\"source\": \"${1:http://127.0.0.1:}\",",
+      "\t\"target\": \"${2:http://}\"",
+      "}"
+    ]
+  }
+}

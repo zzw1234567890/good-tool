@@ -1,0 +1,24 @@
+{
+  "request-config": {
+    "prefix": "rc",
+    "body": [
+      "[",
+      "\t{",
+      "\t\t\"url\": \"${1}\",",
+      "\t\t\"method\": \"${2:get}\",",
+      "\t\t\"data\": \"${3}\"",
+      "\t}",
+      "]"
+    ]
+  },
+  "request-config-one": {
+    "prefix": "rco",
+    "body": [
+      "{",
+      "\t\"url\": \"${1}\",",
+      "\t\"method\": \"${2:get}\",",
+      "\t\"data\": \"${3}\"",
+      "}"
+    ]
+  }
+}

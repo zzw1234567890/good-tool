@@ -1,0 +1,12 @@
+[
+  {
+    "url": "/test",
+    "method": "get",
+    "data": [
+      {
+        "name": "zzw",
+        "username": "zhangzw"
+      }
+    ]
+  }
+]

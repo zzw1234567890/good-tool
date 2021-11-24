@@ -1,0 +1,18 @@
+{
+  "es6 func": {
+    "prefix": "func",
+    "body": ["const ${1:func} = (${2:props}) => {", "\t$3", "}"],
+    "description": "es6箭头函数"
+  },
+  "action func": {
+    "prefix": "action-get",
+    "body": [
+      "const ${1:action} = stateId => () =>",
+      "\tmyfetch({",
+      "\t\tstateId,",
+      "\t\turl: \"$2\",",
+      "\t});"
+    ],
+    "description": "get请求的action"
+  }
+}
