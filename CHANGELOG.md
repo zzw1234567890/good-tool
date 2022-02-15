@@ -1,3 +1,6 @@
+### 更新 1.2.1
+- API转发支持返回图片
+
 ### 更新 1.2.0
 
 - 增加 Wss Test webview， 提供对 WebSocket 功能测试，支持浏览器访问和 vscode 访问
