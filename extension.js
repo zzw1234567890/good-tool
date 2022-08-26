@@ -21,7 +21,8 @@ const {
   isOpen,
   isUseFileConfigProxy,
 } = require("./lib/global-config");
-const { antdHover } = require("./lib/hover-provider/antd-hover");
+const { antdHover } = require("./lib/hover-provider/antdHover");
+const { classNameDefinition } = require("./lib/react-classname-provider/classNameProvider");
 
 /** 插件激活时调用
  * @param {vscode.ExtensionContext} context
@@ -50,11 +51,17 @@ const activate = (context) => {
 
   // antd组件悬停提示
   subscriptions.push(
-    vscode.languages.registerHoverProvider("javascript", {
+    vscode.languages.registerHoverProvider(["javascript", "typescript", {pattern: "**/*.tsx"}], {
       provideHover: antdHover,
     })
   );
 
+  // 支持react className跳转到定义
+  subscriptions.push(
+    vscode.languages.registerDefinitionProvider(["javascript", "typescript", {pattern: "**/*.tsx"}], {
+      provideDefinition: classNameDefinition,
+  }));
+  
   // 延时注册命令，等待服务启动，确认端口号
   setTimeout(() => {
     // 注册"API测试webView"命令
