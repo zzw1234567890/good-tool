@@ -1,3 +1,6 @@
+### 更新 1.2.3
+- 强化className和intl.get()跳转到定义，支持反向跳转，查询范围限制为当前文件所在的pages目录的直接子目录
+
 ### 更新 1.2.2
 - antd组件悬停提示支持.ts和.tsx
 - 支持react className点击跳转到定义

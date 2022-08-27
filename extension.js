@@ -22,7 +22,7 @@ const {
   isUseFileConfigProxy,
 } = require("./lib/global-config");
 const { antdHover } = require("./lib/hover-provider/antdHover");
-const { classNameDefinition } = require("./lib/react-classname-provider/classNameProvider");
+const { classNameDefinition, cssDefinition, intlGetDefinition } = require("./lib/react-classname-provider/classNameProvider");
 
 /** 插件激活时调用
  * @param {vscode.ExtensionContext} context
@@ -56,10 +56,21 @@ const activate = (context) => {
     })
   );
 
-  // 支持react className跳转到定义
+  // 支持react className跳转到定义的css
   subscriptions.push(
     vscode.languages.registerDefinitionProvider(["javascript", "typescript", {pattern: "**/*.tsx"}], {
       provideDefinition: classNameDefinition,
+  }));
+  // 支持react css跳转到使用的className
+  subscriptions.push(
+    vscode.languages.registerDefinitionProvider([{pattern: "**/*.{css,scss}"}], {
+      provideDefinition: cssDefinition,
+  }));
+
+  // 支持翻译字符串key跳转到使用的intl.get()
+  subscriptions.push(
+    vscode.languages.registerDefinitionProvider([{pattern: "**/{zh_CN,en_US}.{ts,tsx}"}], {
+      provideDefinition: intlGetDefinition,
   }));
   
   // 延时注册命令，等待服务启动，确认端口号
