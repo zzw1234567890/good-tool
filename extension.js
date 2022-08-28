@@ -5,8 +5,8 @@ const {
   initConfigFileCount,
 } = require("./lib/analog-data/checkConfigFile");
 const { checkDir } = require("./lib/checkFolder");
-const { initProxy, configProxy } = require("./lib/analog-data/proxy-config");
-const { initRoute, configRoute } = require("./lib/analog-data/route-config");
+const { initProxy, configProxy } = require("./lib/analog-data/proxyConfig");
+const { initRoute, configRoute } = require("./lib/analog-data/routeConfig");
 const { start, reStart, stop } = require("./lib/analog-data/server");
 const {
   updateConfigFile,
@@ -23,6 +23,8 @@ const {
 } = require("./lib/global-config");
 const { antdHover } = require("./lib/hover-provider/antdHover");
 const { classNameDefinition, cssDefinition, intlGetDefinition } = require("./lib/react-classname-provider/classNameProvider");
+const { initDefineFileCount, hasNewDefineFile } = require("./lib/analog-data-generator/checkConfigFile");
+const { generateDataFile } = require("./lib/analog-data-generator/defineGenerator");
 
 /** 插件激活时调用
  * @param {vscode.ExtensionContext} context
@@ -47,6 +49,11 @@ const activate = (context) => {
   // 注册"生成 action 文件"命令
   subscriptions.push(
     commands.registerCommand("good-tool.generateActionCode", generateActionCode)
+  );
+
+  // 注册"生成模拟数据文件"命令
+  subscriptions.push(
+    commands.registerCommand("good-tool.generateAnalogData", generateDataFile)
   );
 
   // antd组件悬停提示
@@ -119,7 +126,8 @@ const activate = (context) => {
   setInterval(() => {
     isUpdateRouteConfig() && configRoute();
     isUpdateProxyConfig() && configProxy();
-  }, 2000);
+    hasNewDefineFile();
+  }, 3000);
 };
 
 const init = () => {
@@ -127,6 +135,7 @@ const init = () => {
   initConfigFileCount();
   initRoute();
   initProxy();
+  initDefineFileCount();
 };
 
 const deactivate = () => {};

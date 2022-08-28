@@ -29,11 +29,30 @@
 > 你可以在配置文件中输入 <kbd>rc</kbd> 快速生成配置模板
 
 ```json
-{
-  "url": "请求的url地址",
-  "method": "请求方式",
-  "data": "请求返回的数据"
-}
+[
+  {
+    "url": "请求的url地址",
+    "method": "请求方式",
+    "data": "请求返回的数据"
+  }
+]
+```
+> 也可以在 <kbd>define</kbd> 目录下创建模拟数据定义文件，配置好后在文件编辑区右击->点击生成模拟数据文件，即可根据定义的规则快速生成你想要的数据，<kbd>.json</kbd> 定义文件格式如下所示：
+```json
+[
+  {
+    "url": "/test",
+    "method": "get",
+    "total": 3,     // 生成数据的数量
+    "columns": {    // 定义每条数据的key和value的类型，value支持：key | number | string | enum | timestamp
+      "id": "key",  // 无需参数，生成uuid，保证唯一
+      "name": "string",   // string: 随机生成长度0-128的字符串；string(10): 长度0-10；string(10, 100): 长度10-100
+      "age": "number(0, 100)",  // number: 随机生成长度11的数字；number(5): 长度5；number(0, 100): 随机生成0-100的数字
+      "sex": "enum(男,女)",   // 随机生成枚举值，该类型参数不能为空
+      "time": "timestamp(hour)"   // 递增生成时间戳，参数支持: second | minute | hour | day | month | year，可不传默认为day
+    }
+  }
+]
 ```
 
 ## 扩展功能
