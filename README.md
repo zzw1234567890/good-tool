@@ -44,13 +44,13 @@
     "url": "/test",
     "method": "get",
     "total": 2,     // 生成数据的数量,如果不传或者设置为0，则result返回对象，否则返回数组
-    "columns": {    // 定义每条数据的key和value的类型，value支持：key | number | string | enum | timestamp
+    "columns": {    // 定义每条数据的key和value的类型，value支持：key | number | string | enum | timestamp | boolean | array
       "id": "key",  // 无需参数，生成uuid，保证唯一
       "name": "string",   // string: 随机生成长度0-128的字符串；string(10): 长度0-10；string(10, 100): 长度10-100
       "age": "number(0, 100)",  // number: 随机生成长度11的数字；number(5): 长度5；number(0, 100): 随机生成0-100的数字
       "sex": "enum(男,女)",   // 随机生成枚举值，该类型参数不能为空
       "time": "timestamp(hour)",   // 递增生成时间戳，参数支持: second | minute | hour | day | month | year | array，可不传默认为day
-      "arr": "array(string(1,10),10)",  // 生成一个大小为10的字符串数组，字符串长度1-10
+      "arr": "array(string(1,10),10)",  // 生成一个大小为10的字符串数组，字符串长度1-10(array类型两个参数都是必须的，第一个参数支持上述value的类型，但是不包括array)
       "company": {
         "total": 2,
         "columns": {
