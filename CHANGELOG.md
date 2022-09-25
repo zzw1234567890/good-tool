@@ -1,3 +1,6 @@
+### 更新 1.3.7
+- 修复bug: 修改前interface中enum类型识别成array(enum(...),25)，修改后识别成enum(...)
+
 ### 更新 1.3.6
 - 修复bug
 - 自动生成数据支持boolean类型
