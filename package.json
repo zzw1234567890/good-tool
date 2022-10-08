@@ -3,7 +3,7 @@
   "displayName": "good-tool",
   "description": "定制的开发辅助工具",
   "publisher": "zzw",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "repository": {
     "type" : "git",
     "url" : "https://github.com/zzw1234567890/good-tool.git"
@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "good-tool.updateConfigFile",
-        "title": "updateConfigFile",
+        "title": "读取配置文件",
         "icon": {
           "dark": "./images/tool-light.svg",
           "light": "./images/tool-dark.svg"
@@ -31,7 +31,7 @@
       },
       {
         "command": "good-tool.patchTotal",
-        "title": "patchTotal",
+        "title": "代码修改行数统计",
         "icon": {
           "dark": "./images/patch-light.svg",
           "light": "./images/patch-dark.svg"
@@ -50,16 +50,16 @@
         "title": "根据Result生成模拟数据"
       },
       {
-        "command": "good-tool.apiTest",
-        "title": "apiTest",
+        "command": "good-tool.switchEnv",
+        "title": "切换环境",
         "icon": {
-          "dark": "./images/api-light.svg",
-          "light": "./images/api-dark.svg"
+          "dark": "./images/env-light.svg",
+          "light": "./images/env-dark.svg"
         }
       },
       {
         "command": "good-tool.wssTest",
-        "title": "wssTest",
+        "title": "websocket调试",
         "icon": {
           "dark": "./images/wss-light.svg",
           "light": "./images/wss-dark.svg"
@@ -80,8 +80,8 @@
           "group": "navigation"
         },
         {
-          "command": "good-tool.apiTest",
-          "alt": "good-tool.apiTest",
+          "command": "good-tool.switchEnv",
+          "alt": "good-tool.switchEnv",
           "group": "navigation"
         },
         {
