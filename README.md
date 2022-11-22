@@ -4,7 +4,7 @@
 
 > 环境要求：node^14.17.4，vscode^1.59.0
 
-<video src="https://img.amazing-w.top/plugin/good-tool/1.mp4" width="800px" height="500px" controls="controls"></video>
+<video src="https://wmxie.oss-cn-hangzhou.aliyuncs.com/zwzhang/20221122_095115.mp4" width="800px" height="500px" controls="controls"></video>
 
 ## Good Tool 快速开始
 
@@ -12,7 +12,7 @@
 
 #### 第一步 修改你的项目配置
 
-> package.json 文件中设置代理，端口号为本插件的监听端口，默认 21818
+> package.json 文件中设置代理，端口号为本插件的监听端口，默认 21818（确认插件配置中的模拟数据功能开启，默认是开启的）
 
 ```json
 "proxy":"http://127.0.0.1:21818"
@@ -20,20 +20,19 @@
 
 #### 第二步 添加 API 配置文件
 
-> 在/.vscode/good-tool/目录下随意新建一个 json 文件(文件名没有要求并且可以有多个，但必须是 json 后缀，文件名不能是 proxy.json，该文件会被插件的其他模块读取)
-
-![](https://img.amazing-w.top/plugin/good-tool/2.png)
-
-#### 第三步 自定义你的配置
-
-> 你可以在配置文件中输入 <kbd>rc</kbd> 快速生成配置模板
+> 在/.vscode/good-tool/目录下随意新建一个 json 文件(文件名没有要求并且可以有多个，但必须是 json 后缀，文件名不能是 proxy.json，该文件会被插件的其他模块读取)。你可以在配置文件中输入 <kbd>rc</kbd> 快速生成配置模板
 
 ```json
 [
   {
-    "url": "请求的url地址",
-    "method": "请求方式",
-    "data": "请求返回的数据"
+    "url": "/test",           // 请求的url地址
+    "method": "get",          // 请求方式
+    "data": [                 // 请求返回的数据
+      {
+        "name": "zzw",
+        "username": "zhangzw"
+      }
+    ]
   }
 ]
 ```
@@ -62,6 +61,10 @@
   }
 ]
 ```
+#### 第三步 你将得到一个自动生成的API
+> 打开浏览器输入：http://localhost:21818/test 来验证它
+
+![](https://wmxie.oss-cn-hangzhou.aliyuncs.com/zwzhang/20221107124505.png)
 
 ## 扩展功能
 
@@ -69,7 +72,7 @@
 
 ##### 在 good-tool 插件配置中设置 proxy 为后台服务器地址即可
 
-![](https://img.amazing-w.top/plugin/good-tool/11.png)
+![](https://wmxie.oss-cn-hangzhou.aliyuncs.com/zwzhang/20221107124646.png)
 
 #### 二、多个代理
 
@@ -77,7 +80,7 @@
 
 > 你可能注意到配置中有个 `useFileConfigProxy` 配置项，该配置默认关闭，如果开启这项配置，`proxy` 配置项将会失效，但会在/.vscode/good-tool/目录下创建一个 `proxy.json` 文件，在该文件中输入 `pc` 即可出现配置模板。你可以配置多个项目不同的 `source` 对应不同的 `target` ，也可以配置同一个 `source` 对应不同的 `target`，但最后只会转发给最后一个配置的 `target`
 
-![](https://img.amazing-w.top/plugin/good-tool/4.png)
+![](https://wmxie.oss-cn-hangzhou.aliyuncs.com/zwzhang/20221107124723.png)
 
 ```json
 [
@@ -85,10 +88,16 @@
     // 本地服务url
     "source": "http://127.0.0.1:3000",
     // API服务器url
-    "target": "https://10.182.226.48"
+    "target": "https://10.182.226.48",
+    // 描述信息
+    "desc": "dev环境"
   }
 ]
 ```
+
+##### 代理切换
+> 点击右上角的环境切换按钮可快速切换环境
+![](https://wmxie.oss-cn-hangzhou.aliyuncs.com/zwzhang/20221107125215.png)
 
 #### 三、条件查询
 
