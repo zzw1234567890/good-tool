@@ -1,4 +1,7 @@
-### 更新 1.3.11
+### 更新 1.3.13
+- bug fixed: useResult中stateId不一致时导致查找失败。修复后stateId不一致可以正常生成数据，但需要手动填写url
+
+### 更新 1.3.12
 - bug fixed: useResult无法找到本文件中的TS定义
 
 ### 更新 1.3.11
