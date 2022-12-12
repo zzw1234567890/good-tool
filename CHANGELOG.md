@@ -1,3 +1,10 @@
+### 更新 1.4.1
+- bug fixed: useResult匿名内部类识别失败
+
+### 更新 1.4.0
+- useResult自动生成数据支持匿名内部类（支持数组，不支持嵌套）
+- bug fixed: useResult生成的数据描述文件enum类型值为字符串时，存在双引号
+
 ### 更新 1.3.15
 - bug fixed: useResult类型名模糊匹配找错文件，导致无法找到TS定义
 
