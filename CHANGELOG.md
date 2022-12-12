@@ -1,3 +1,6 @@
+### 更新 1.3.14
+- useResult自动生成数据支持：type定义类型、允许行内注释注释和可选属性
+
 ### 更新 1.3.13
 - bug fixed: useResult中stateId不一致时导致查找失败。修复后stateId不一致可以正常生成数据，但需要手动填写url
 
