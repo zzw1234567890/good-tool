@@ -1,3 +1,7 @@
+### 更新 1.4.5
+- bug fixed: useResult自动生成数据支持interface继承
+- useResult自动生成数据流程优化：文件中只有一个类型时，跳过选择类型
+
 ### 更新 1.4.4
 - bug fixed: useResult自动生成数据匿名类型数组异常、匿名类型重复异常
 
