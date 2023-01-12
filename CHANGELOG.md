@@ -1,3 +1,7 @@
+### 更新 1.5.0
+- 引入esbuild进行代码压缩，插件启动速度提提升，耗时降低50%，插件大小降低70%
+- bug fixed: useResult<>()括号中有换行导致匹配失败
+
 ### 更新 1.4.5
 - bug fixed: useResult自动生成数据支持interface继承
 - useResult自动生成数据流程优化：文件中只有一个类型时，跳过选择类型
