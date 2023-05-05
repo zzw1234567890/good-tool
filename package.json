@@ -3,7 +3,7 @@
   "displayName": "good-tool",
   "description": "定制的开发辅助工具",
   "publisher": "zzw",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/zzw1234567890/good-tool.git"
@@ -145,7 +145,7 @@
           "description": "项目中模块的父级目录名称（非路径）"
         },
         "pathAlias": {
-          "type":"object",
+          "type": "object",
           "description": "路径别名"
         }
       }
