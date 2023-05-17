@@ -1,6 +1,6 @@
 ## Good Tool 简介
 
-> 前端开发小工具。主要功能：API 模拟、 API 转发、action 代码生成器、antd 提示文档。目前支持 get、post、put、delete 请求，支持文件下载，文件上传还未测试
+> 前端开发小工具。主要功能：API 模拟、 API 转发、action 代码生成器、antd 提示文档。目前支持 get、post、put、delete、ws（自定义的，用来模拟WebSocket API） 请求，支持ws和stompWs，支持文件下载，文件上传还未测试
 
 > 环境要求：node^14.17.4，vscode^1.59.0
 
@@ -26,7 +26,7 @@
 [
   {
     "url": "/test",           // 请求的url地址
-    "method": "get",          // 请求方式
+    "method": "get",          // 请求方式：get、post、put、delete、ws
     "data": [                 // 请求返回的数据
       {
         "name": "zzw",
@@ -89,6 +89,10 @@
     "source": "http://127.0.0.1:3000",
     // API服务器url
     "target": "https://10.182.226.48",
+    // WebSocket连接url，不带host时默认为当前host，也可配置为其它host：wss://127.0.0.2:5000/ws
+    "ws": "/ws",
+    // StompWs连接url
+    "stompWs": "/ws",
     // 描述信息
     "desc": "dev环境"
   }

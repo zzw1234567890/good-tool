@@ -153,8 +153,8 @@ const activate = (context) => {
   );
 
   if (isOpen()) {
-    start();
     init();
+    start();
   }
 
   // 监听配置文件更新

@@ -3,7 +3,7 @@
   "displayName": "good-tool",
   "description": "定制的开发辅助工具",
   "publisher": "zzw",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/zzw1234567890/good-tool.git"
@@ -190,6 +190,8 @@
     "axios": "^0.21.4",
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
+    "express-ws": "^5.0.2",
+    "ws": "^8.13.0",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "silly-datetime": "^0.1.2"
