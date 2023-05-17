@@ -89,10 +89,10 @@
     "source": "http://127.0.0.1:3000",
     // API服务器url
     "target": "https://10.182.226.48",
-    // WebSocket连接url，不带host时默认为当前host，也可配置为其它host：wss://127.0.0.2:5000/ws
-    "ws": "/ws",
-    // StompWs连接url
-    "stompWs": "/ws",
+    // WebSocket服务器地址，不配置时默认取target
+    "targetWs": "https://10.182.226.48",
+    // 支持stompWs，默认为false，使用传统websocket
+    "stompWs": true,
     // 描述信息
     "desc": "dev环境"
   }
